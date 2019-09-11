@@ -12,7 +12,9 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "marked": "^0.7.0",
+    "nuxt": "^2.0.0",
+    "yaml-front-matter": "^4.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
