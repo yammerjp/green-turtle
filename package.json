@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "md2json": "node md2json.js"
+    "md2json": "node md2json.js",
+    "make": "node md2json.js && nuxt generate"
   },
   "dependencies": {
     "marked": "^0.7.0",
