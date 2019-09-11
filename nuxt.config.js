@@ -1,4 +1,4 @@
-import articleIds from './assets/article-ids.js'
+import articleIds from './article-ids-extends-nuxt-config.js'
 
 export default {
   mode: 'universal',
