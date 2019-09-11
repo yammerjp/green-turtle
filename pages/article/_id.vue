@@ -16,8 +16,4 @@ export default {
     return { articleObject }
   }
 }
-
-/*
-
-*/
 </script>
