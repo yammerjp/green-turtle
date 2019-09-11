@@ -10,9 +10,9 @@ export default {
   components: {
     Article
   },
-  async asyncData ({ params }) {
+  asyncData ({ params }) {
     // generateするのでファイルが存在しない場合のエラー処理は考慮しない
-    const articleObject = await require(`~/assets/article/${params.id}/index.json`)
+    const articleObject = require(`~/assets/article/${params.id}/index.json`)
     return { articleObject }
   }
 }

@@ -56,7 +56,7 @@ const md2jsons = (articleIds) => {
   articleIds.forEach((articleId, idx) => {
     md2json(`${config.articleFolderPath}/${articleId}/${config.mdFileName}`, `${config.articleFolderPath}/${articleId}/${config.jsonFileName}`)
 
-    articleIdsJsContent += `'/article/${articleId}' ${(idx === articleIds.length - 1) ? ']' : ','}`
+    articleIdsJsContent += ` '/article/${articleId}'${(idx === articleIds.length - 1) ? ' ]\n' : ','}`
   })
   fs.writeFile(config.extendsNuxtConfig, articleIdsJsContent, (err) => {
     if (err) {

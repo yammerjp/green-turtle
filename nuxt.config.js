@@ -1,7 +1,7 @@
 import articleIds from './article-ids-extends-nuxt-config.js'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */

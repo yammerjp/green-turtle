@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <span v-html="articleObject.bodyHtml" />
-  </div>
+  <div v-html="articleObject.bodyHtml" />
 </template>
 
 <script>

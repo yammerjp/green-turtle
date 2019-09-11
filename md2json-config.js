@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   articleFolderPath: 'assets/article',
   mdFileName: 'index.md',
   jsonFileName: 'index.json',

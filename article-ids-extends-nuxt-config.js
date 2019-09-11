@@ -1,3 +1,1 @@
-export default [
-  '/article/sample-article1'
-]
+export default [ '/article/article2', '/article/sample-article1' ]
