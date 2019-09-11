@@ -1,3 +1,4 @@
+import articleIds from './assets/article-ids.js'
 
 export default {
   mode: 'universal',
@@ -50,5 +51,9 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  generate: {
+    fallback: true,
+    routes: articleIds
   }
 }
