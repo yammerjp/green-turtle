@@ -8,15 +8,17 @@
 # install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
 # generate static project
 $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## 次のような手順を想定 最終的なデプロイは自動化する
+
+- git clone 記事リポジトリ
+- 記事のjson化
+- git clone green-turtleリポジトリ
+- nuxt generate
+- distのコピー
+- 画像ファイルなどのコピー
