@@ -89,3 +89,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# md2json convert the file
+article-ids-extends-nuxt-config.js
