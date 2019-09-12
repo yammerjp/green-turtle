@@ -53,7 +53,7 @@ const md2json = (inputFileName, outputFileName) => {
 }
 
 const md2jsons = (articleIds) => {
-  let articleIdsJsContent = 'export default ['
+  let articleIdsJsContent = 'module.exports = ['
   articleIds.forEach((articleId, idx) => {
     md2json(`${config.articleFolderPath}/${articleId}/${config.mdFileName}`, `${config.articleFolderPath}/${articleId}/${config.jsonFileName}`)
 

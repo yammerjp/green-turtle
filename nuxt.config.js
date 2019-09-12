@@ -1,4 +1,5 @@
-import articleIds from './article-ids-extends-nuxt-config.js'
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const articleIdPaths = require('./article-ids-extends-nuxt-config.js')
 
 export default {
   mode: 'universal',
@@ -54,6 +55,6 @@ export default {
   },
   generate: {
     fallback: true,
-    routes: articleIds
+    routes: articleIdPaths
   }
 }
