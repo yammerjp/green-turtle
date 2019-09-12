@@ -6,10 +6,9 @@ const config = require('./md2json-config.js')
 
 fs.readdir(config.articleFolderPath,
   (err, files) => {
-    // eslint-disable-next-line no-console
     if (err) {
-      // eslint-disable-next-line no-console
       console.log(err)
+      throw err
     }
     const articleIds = files.filter(file => isExistFile(`${config.articleFolderPath}/${file}/${config.mdFileName}`))
     md2jsons(articleIds)
@@ -19,21 +18,18 @@ fs.readdir(config.articleFolderPath,
 const md2json = (inputFileName, outputFileName) => {
   fs.readFile(inputFileName, 'utf-8', (err, fileContents) => {
     if (err !== null) {
-      // eslint-disable-next-line no-console
       console.log(err)
-      return
+      throw err
     }
     if (fileContents === undefined) {
-      // eslint-disable-next-line no-console
       console.log('fileContents is undefind')
-      return
+      throw err
     }
 
     const obj = yamlFront.loadFront(fileContents)
     if (obj.__content === undefined) {
-      // eslint-disable-next-line no-console
       console.log('Error: __content is undefind')
-      return
+      throw err
     }
 
     obj.html = marked(obj.__content)
@@ -44,15 +40,16 @@ const md2json = (inputFileName, outputFileName) => {
 
     fs.writeFile(outputFileName, json, (err) => {
       if (err) {
-        // eslint-disable-next-line no-console
         console.log(err)
+        throw err
       }
+      console.log(`Convert: ${inputFileName} => ${outputFileName}`)
     })
   })
 }
 
 const md2jsons = (articleIds) => {
-  let articleIdsJsContent = 'export default ['
+  let articleIdsJsContent = 'module.exports = ['
   articleIds.forEach((articleId, idx) => {
     md2json(`${config.articleFolderPath}/${articleId}/${config.mdFileName}`, `${config.articleFolderPath}/${articleId}/${config.jsonFileName}`)
 
@@ -60,9 +57,10 @@ const md2jsons = (articleIds) => {
   })
   fs.writeFile(config.extendsNuxtConfig, articleIdsJsContent, (err) => {
     if (err) {
-      // eslint-disable-next-line no-console
       console.log(err)
+      throw err
     }
+    console.log(`Add: ${config.extendsNuxtConfig}`)
   })
 }
 

@@ -1,4 +1,7 @@
-import articleIds from './article-ids-extends-nuxt-config.js'
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const config = require('./md2json-config.js')
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const articleIdPaths = require(config.extendsNuxtConfig)
 
 export default {
   mode: 'universal',
@@ -54,6 +57,7 @@ export default {
   },
   generate: {
     fallback: true,
-    routes: articleIds
+    dir: config.generateDir,
+    routes: articleIdPaths
   }
 }
