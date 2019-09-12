@@ -6,10 +6,10 @@ const config = require('./md2json-config.js')
 
 fs.readdir(config.articleFolderPath,
   (err, files) => {
-    // eslint-disable-next-line no-console
     if (err) {
       // eslint-disable-next-line no-console
       console.log(err)
+      throw err
     }
     const articleIds = files.filter(file => isExistFile(`${config.articleFolderPath}/${file}/${config.mdFileName}`))
     md2jsons(articleIds)
@@ -21,19 +21,19 @@ const md2json = (inputFileName, outputFileName) => {
     if (err !== null) {
       // eslint-disable-next-line no-console
       console.log(err)
-      return
+      throw err
     }
     if (fileContents === undefined) {
       // eslint-disable-next-line no-console
       console.log('fileContents is undefind')
-      return
+      throw err
     }
 
     const obj = yamlFront.loadFront(fileContents)
     if (obj.__content === undefined) {
       // eslint-disable-next-line no-console
       console.log('Error: __content is undefind')
-      return
+      throw err
     }
 
     obj.html = marked(obj.__content)
@@ -46,6 +46,7 @@ const md2json = (inputFileName, outputFileName) => {
       if (err) {
         // eslint-disable-next-line no-console
         console.log(err)
+        throw err
       }
     })
   })
@@ -62,6 +63,7 @@ const md2jsons = (articleIds) => {
     if (err) {
       // eslint-disable-next-line no-console
       console.log(err)
+      throw err
     }
   })
 }
