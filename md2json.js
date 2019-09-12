@@ -7,7 +7,6 @@ const config = require('./md2json-config.js')
 fs.readdir(config.articleFolderPath,
   (err, files) => {
     if (err) {
-      // eslint-disable-next-line no-console
       console.log(err)
       throw err
     }
@@ -19,19 +18,16 @@ fs.readdir(config.articleFolderPath,
 const md2json = (inputFileName, outputFileName) => {
   fs.readFile(inputFileName, 'utf-8', (err, fileContents) => {
     if (err !== null) {
-      // eslint-disable-next-line no-console
       console.log(err)
       throw err
     }
     if (fileContents === undefined) {
-      // eslint-disable-next-line no-console
       console.log('fileContents is undefind')
       throw err
     }
 
     const obj = yamlFront.loadFront(fileContents)
     if (obj.__content === undefined) {
-      // eslint-disable-next-line no-console
       console.log('Error: __content is undefind')
       throw err
     }
@@ -44,10 +40,10 @@ const md2json = (inputFileName, outputFileName) => {
 
     fs.writeFile(outputFileName, json, (err) => {
       if (err) {
-        // eslint-disable-next-line no-console
         console.log(err)
         throw err
       }
+      console.log(`Convert: ${inputFileName} => ${outputFileName}`)
     })
   })
 }
@@ -61,10 +57,10 @@ const md2jsons = (articleIds) => {
   })
   fs.writeFile(config.extendsNuxtConfig, articleIdsJsContent, (err) => {
     if (err) {
-      // eslint-disable-next-line no-console
       console.log(err)
       throw err
     }
+    console.log(`Add: ${config.extendsNuxtConfig}`)
   })
 }
 

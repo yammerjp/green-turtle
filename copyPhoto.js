@@ -14,7 +14,7 @@ const copyArticlePhotos = (articleIdPath) => {
           console.log(err)
           throw err
         }
-        console.log(`copy file: assets${articleIdPath}/${file} => dist/${articleIdPath}/${file}`)
+        console.log(`Copy: assets${articleIdPath}/${file} => dist/${articleIdPath}/${file}`)
       })
     })
   })
