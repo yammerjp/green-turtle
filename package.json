@@ -5,14 +5,11 @@
   "author": "basd4g",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "md2json": "node md2json.js",
     "make": "node md2json.js && nuxt generate && node copyPhoto.js",
-    "unmake": "node deleteJson.js %% rm -rf dist && echo 'Delete: dist/*'"
+    "unmake": "node deleteJson.js"
   },
   "dependencies": {
     "marked": "^0.7.0",

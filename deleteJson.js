@@ -1,6 +1,15 @@
 const fs = require('fs')
-const articleIdPaths = require('./article-ids-extends-nuxt-config.js')
-const config = require('./md2json-config.js')
+
+const isExistFile = (file) => {
+  try {
+    fs.statSync(file)
+    return true
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      return false
+    }
+  }
+}
 
 const deleteFile = (path) => {
   if (!isExistFile(path)) {
@@ -14,20 +23,13 @@ const deleteFile = (path) => {
     console.log(`Delete: ${path}`)
   })
 }
-const isExistFile = (file) => {
-  try {
-    fs.statSync(file)
-    return true
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      return false
-    }
-  }
-}
+
+const config = require('./md2json-config.js')
+if (!isExistFile(config.extendsNuxtConfig)) { return }
+const articleIdPaths = require(config.extendsNuxtConfig)
 
 articleIdPaths.forEach((path) => {
   deleteFile(`${path}/${config.jsonFileName}`)
 })
 
-// eslint-disable-next-line no-use-before-define
-deleteFile('./article-ids-extends-nuxt-config.js')
+deleteFile(config.extendsNuxtConfig)

@@ -1,5 +1,6 @@
 const fs = require('fs')
-const articleIdPaths = require('./article-ids-extends-nuxt-config.js')
+const config = require('./md2json-config.js')
+const articleIdPaths = require(config.extendsNuxtConfig)
 
 const copyArticlePhotos = (articleIdPath) => {
   fs.readdir(`assets${articleIdPath}`, (err, files) => {
@@ -9,12 +10,15 @@ const copyArticlePhotos = (articleIdPath) => {
     }
     const photoFileNames = files.filter((file) => { return /.*\.(jpg|png|gif|svg)$/.test(file) })
     photoFileNames.forEach((file) => {
-      fs.copyFile(`assets${articleIdPath}/${file}`, `dist/${articleIdPath}/${file}`, (err) => {
+      const copyFrom = `assets${articleIdPath}/${file}`
+      // ${config.generateDir}と${articleIdPath}の間に/がないのは正常 ${articleIdPath}が/を内包
+      const copyTo = `${config.generateDir}${articleIdPath}/${file}`
+      fs.copyFile(copyFrom, copyTo, (err) => {
         if (err) {
           console.log(err)
           throw err
         }
-        console.log(`Copy: assets${articleIdPath}/${file} => dist/${articleIdPath}/${file}`)
+        console.log(`Copy: ${copyFrom} => ${copyTo}`)
       })
     })
   })
