@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  deploy_master: # ジョブ名
+    docker:
+      - image: circleci/node:10.7 # ジョブ実行環境のDockerイメージを記述
+    steps:
+      - checkout # ソースコードのチェックアウト
+      - run: # 順に実行したいコマンドとコマンドに名前をつけます
+          name: yarn install
+          command: yarn install
+      - run:
+          name: yarn make
+          command: yarn make
+      - run:
+          name: yarn deploy
+          command: yarn deploy --token=$FIREBASE_TOKEN # プロジェクト上のfirebase-toolsでデプロイします
+
+workflows:
+  version: 2
+  deploy_master: # ワークフローの名前
+    jobs:
+      - deploy_master: # 上で定義したジョブを指定します
+          filters:
+            branches:
+              only: master # developブランチのみを実行対象とします
