@@ -39,16 +39,6 @@ jobs:
       - run:
           name: yarn deploy
           command: cd green-turtle && yarn deploy --token=$FIREBASE_TOKEN
-
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - deploy_master:
-          filters:
-            branches:
-              only: master
-
 workflows:
   version: 2
   workflow:
