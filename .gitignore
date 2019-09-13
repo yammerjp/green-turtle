@@ -92,3 +92,6 @@ sw.*
 
 # md2json convert the file
 article-ids-extends-nuxt-config.js
+
+# firebase
+.firebase

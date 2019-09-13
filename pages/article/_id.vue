@@ -1,14 +1,17 @@
 <template>
   <div>
     <Article :article-id="$route.params.id" :article-object="articleObject" />
+    <FirebaseScript />
   </div>
 </template>
 
 <script>
 import Article from '~/components/Article.vue'
+import FirebaseScript from '~/components/FirebaseScript.vue'
 export default {
   components: {
-    Article
+    Article,
+    FirebaseScript
   },
   asyncData ({ params }) {
     // generateするのでファイルが存在しない場合のエラー処理は考慮しない
