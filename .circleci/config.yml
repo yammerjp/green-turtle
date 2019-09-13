@@ -28,12 +28,12 @@ jobs:
 
 workflows:
   version: 2
-  deploy_master:
-    jobs:
-      - deploy_master:
-          filters:
-            branches:
-              only: master
-  make_test:
-    jobs:
-      - make_test:
+  - deploy_master:
+      jobs:
+        - deploy_master:
+            filters:
+              branches:
+                only: master
+  - make_test:
+      jobs:
+        - make_test:
