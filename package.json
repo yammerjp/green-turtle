@@ -9,7 +9,8 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "md2json": "node md2json.js",
     "make": "node md2json.js && nuxt generate && node copyPhoto.js",
-    "unmake": "node deleteJson.js"
+    "unmake": "node deleteJson.js",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "firebase-tools": "^7.3.2",
