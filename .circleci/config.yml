@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: yarn install --no
+          name: yarn install
           command: yarn install
       - run:
           name: yarn make
