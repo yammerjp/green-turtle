@@ -1,5 +1,15 @@
 version: 2
 jobs:
+  make_test:
+    docker:
+      - image: circleci/node:10.7
+    steps:
+      - run:
+          name: yarn install
+          command: yarn install
+      - run:
+          name: yarn make
+          command: yarn make
   deploy_master:
     docker:
       - image: circleci/node:10.7
@@ -14,23 +24,15 @@ jobs:
       - run:
           name: yarn deploy
           command: yarn deploy --token=$FIREBASE_TOKEN
-  make_test:
-    docker:
-      - image: circleci/node:10.7
-    steps:
-      - run:
-          name: yarn install
-          command: yarn install
-      - run:
-          name: yarn make
-          command: yarn make
-        
 
 workflows:
   version: 2
   workflow:
     jobs:
       - make_test:
+          filters:
+            branches:
+              ignore: master
       - deploy_master:
           filters:
             branches:
