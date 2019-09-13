@@ -2,18 +2,18 @@ version: 2
 jobs:
   make_test:
     docker:
-      - image: circleci/node:10.7
+      - image: circleci/node:12.8
     steps:
       - checkout
       - run:
-          name: yarn install
+          name: yarn install --no
           command: yarn install
       - run:
           name: yarn make
           command: yarn make
   deploy_master:
     docker:
-      - image: circleci/node:10.7
+      - image: circleci/node:12.8
     steps:
       - checkout
       - run:
