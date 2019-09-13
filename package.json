@@ -12,6 +12,7 @@
     "unmake": "node deleteJson.js"
   },
   "dependencies": {
+    "firebase-tools": "^7.3.2",
     "marked": "^0.7.0",
     "nuxt": "^2.0.0",
     "yaml-front-matter": "^4.0.0"
