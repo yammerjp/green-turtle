@@ -1,15 +1,18 @@
 <template>
   <div>
+    <Header />
     <Article :article-id="$route.params.id" :article-object="articleObject" />
     <FirebaseScript />
   </div>
 </template>
 
 <script>
+import Header from '~/components/Header.vue'
 import Article from '~/components/Article.vue'
 import FirebaseScript from '~/components/FirebaseScript.vue'
 export default {
   components: {
+    Header,
     Article,
     FirebaseScript
   },

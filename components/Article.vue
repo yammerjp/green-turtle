@@ -1,5 +1,5 @@
 <template>
-  <div v-html="articleObject.html" class="articleBox"/>
+  <div class="gt-article" v-html="articleObject.html" />
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style>
-.articleBox{
+.gt-article{
   max-width: 800px;
   word-wrap: break-word;
   margin: auto;
