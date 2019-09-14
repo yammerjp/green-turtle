@@ -18,6 +18,13 @@ export default {
   word-wrap: break-word;
   margin: auto;
   padding: 1em;
+  background-color: #ffffff;
+  border: solid;
+  border-radius: 0.2em;
+  border-width: 1px;
+  border-color: #aaaaaa;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 img{
   width: 90%;
