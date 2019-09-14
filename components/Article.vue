@@ -1,9 +1,15 @@
 <template>
-  <div class="gt-article" v-html="articleObject.html" />
+  <Content>
+    <div class="gt-article" v-html="articleObject.html" />
+  </Content>
 </template>
 
 <script>
+import Content from '~/components/Content.vue'
 export default {
+  components:{
+    Content
+    },
   props: {
     articleId: String,
     articleObject: Object
@@ -13,19 +19,6 @@ export default {
 </script>
 
 <style>
-.gt-article{
-  max-width: 800px;
-  word-wrap: break-word;
-  margin: auto;
-  padding: 1em;
-  background-color: #ffffff;
-  border: solid;
-  border-radius: 0.2em;
-  border-width: 1px;
-  border-color: #aaaaaa;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 img{
   width: 90%;
   display: block;
