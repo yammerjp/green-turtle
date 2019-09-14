@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Article :article-id="$route.params.id" :article-object="articleObject" :articlePrevPath="`#`" :articleNextPath="`#`"/>
+    <Article :article-id="$route.params.id" :article-object="articleObject" :prev-and-next-article-id="prevAndNextArticleId"/>
     <FirebaseScript />
   </div>
 </template>
@@ -19,7 +19,29 @@ export default {
   asyncData ({ params }) {
     // generateするのでファイルが存在しない場合のエラー処理は考慮しない
     const articleObject = require(`~/assets/article/${params.id}/index.json`)
-    return { articleObject }
+    const allArticles = require(`~/assets/allArticles.json`)
+    return { articleObject, allArticles }
+  },
+  computed: {
+    prevAndNextArticleId() {
+      let number = undefined
+      for (let i = 0; i < this.allArticles.length; i++) {
+        if (this.allArticles[i].id === this.$route.params.id) {
+          number = i
+          break
+        }
+      }
+      if (number === undefined) {
+        const e = "Error: article is not found"
+        console.log(e)
+//        throw e
+        return undefined
+      }
+      return {
+        next : (number === 0) ? undefined : this.allArticles[number-1].id,
+        prev : (number === this.allArticles.length-1) ? undefined : this.allArticles[number+1].id
+      }
+    }
   }
 }
 </script>
