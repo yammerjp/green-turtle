@@ -18,7 +18,7 @@ fs.readdir(config.articleFolderPath,
   }
 )
 
-const md2json = (inputFileName, outputFileName, articlesLength) => {
+const md2json = (inputFileName, outputFileName, articleId, articlesLength) => {
   fs.readFile(inputFileName, 'utf-8', (err, fileContents) => {
     if (err !== null) {
       console.log(err)
@@ -34,6 +34,8 @@ const md2json = (inputFileName, outputFileName, articlesLength) => {
       console.log('Error: __content is undefind')
       throw err
     }
+    obj.id = articleId
+
     const html = marked(obj.__content)
     delete obj.__content
     obj.summary = html.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, ' ').slice(0, 50)
@@ -60,7 +62,7 @@ const md2json = (inputFileName, outputFileName, articlesLength) => {
 const md2jsons = (articleIds) => {
   let articleIdsJsContent = 'module.exports = ['
   articleIds.forEach((articleId, idx) => {
-    md2json(`${config.articleFolderPath}/${articleId}/${config.mdFileName}`, `${config.articleFolderPath}/${articleId}/${config.jsonFileName}`, articleIds.length)
+    md2json(`${config.articleFolderPath}/${articleId}/${config.mdFileName}`, `${config.articleFolderPath}/${articleId}/${config.jsonFileName}`, articleId, articleIds.length)
 
     articleIdsJsContent += ` '/article/${articleId}'${(idx === articleIds.length - 1) ? ' ]\n' : ','}`
   })

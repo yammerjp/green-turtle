@@ -7,8 +7,10 @@
         <div v-html="articleObject.html" />
       </div>
       <div class="gt-article-prev-and-next">
-        <a class="gt-article-prev" :href="articlePrevPath">&lt; 前の記事</a>
-        <a class="gt-article-next" :href="articleNextPath">次の記事 &gt;</a>
+        <a v-if="prevAndNextArticleId.prev" class="gt-article-prev" :href="`/article/${prevAndNextArticleId.prev}/`">&lt; 前の記事</a>
+        <span v-else class="gt-article-prev">  </span>
+        <a v-if="prevAndNextArticleId.next" class="gt-article-next" :href="`/article/${prevAndNextArticleId.next}/`">次の記事 &gt;</a>
+        <span v-else class="gt-article-next">  </span>
       </div>
     </div>
   </Content>
@@ -23,8 +25,7 @@ export default {
   props: {
     articleId: String,
     articleObject: Object,
-    articlePrevPath: String,
-    articleNextPath: String
+    prevAndNextArticleId: Object
   },
 }
 
