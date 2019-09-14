@@ -1,7 +1,13 @@
 <template><div>
   <div class="gt-header">
-    Green Turtle
-  </div>
+  <div class="gt-header-title">
+    <h1>
+      Green Turtle
+    </h1>
+    <span>
+      情報系学生が技術に関することをつらつらと
+    </span>
+  </div></div>
   <Content :is-header-navigation="true">
     <a class="gt-header-navigation-item" href="https://blog.yammer.fun">Home</a>
     <a class="gt-header-navigation-item" href="https://blog.yammer.fun/article/aboutMe">About</a>
@@ -22,12 +28,24 @@ export default {
 <style>
 .gt-header{
     width: 100%;
-    text-align: center;
     padding-top: 1em;
     padding-bottom: 1em;
-    font-size: 2em;
-    color: #ffffff;
     background-color: #35495e;
+}
+.gt-header-title {
+  max-width: 800px;
+  word-wrap: break-word;
+  margin: auto;
+  padding-left: 1em;
+  color: #ffffff;
+}
+.gt-header-title > h1 {
+  display: inline-block;
+  font-size: 2em;
+  padding-right: 0.5em;
+}
+.gt-header-title > span {
+  font-size: 1em;
 }
 
 .gt-header-navigation-item {

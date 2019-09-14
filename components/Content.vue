@@ -27,6 +27,7 @@ export default {
   border-width: 1px;
   border-color: #aaaaaa;
   margin-bottom: 1em;
+  color:#444444;
 }
 .gt-content-header-navigation{
   margin-top: 0;
@@ -34,9 +35,7 @@ export default {
   border-top-right-radius: 0;
   border-top-style: none;
   text-align: center;
-  padding: 0.1em;
-  padding-bottom: 0.2m;
-  font-size: 1.3em;
+  padding: 0.5em;
 }
 .gt-content-non-header-navigation{
   margin-top: 1em;
