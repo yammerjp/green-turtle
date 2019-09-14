@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Article :article-id="$route.params.id" :article-object="articleObject" />
+    <Article :article-id="$route.params.id" :article-object="articleObject" :articlePrevPath="`#`" :articleNextPath="`#`"/>
     <FirebaseScript />
   </div>
 </template>
@@ -25,6 +25,12 @@ export default {
 </script>
 
 <style>
+a {
+  color: #808080;
+}
+a:visited {
+  color: #aaaaaa
+}
 body{
   background-color: #f8f8f8;
 }

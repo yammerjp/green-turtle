@@ -1,6 +1,6 @@
 ---
 title: sample article 1
-date: 2019-09-09 20:40:00
+date: 2019/09/09 20:40
 tags: testTag
 ---
 
