@@ -1,10 +1,10 @@
 <template><div>
   <div class="gt-header">
-  <div class="gt-header-title">
-    <h1>
+  <div class="gt-header-title-area">
+    <span class="gt-header-title">
       Green Turtle
-    </h1>
-    <span>
+    </span>
+    <span class="gt-header-subtitle">
       情報系学生が技術に関することをつらつらと
     </span>
   </div></div>
@@ -25,26 +25,32 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+a {
+    color:#444444;
+}
+a:hover {
+    color:#444444;
+}
 .gt-header{
     width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
     background-color: #35495e;
 }
-.gt-header-title {
+.gt-header-title-area {
   max-width: 800px;
   word-wrap: break-word;
   margin: auto;
   padding-left: 1em;
   color: #ffffff;
 }
-.gt-header-title > h1 {
+.gt-header-title {
   display: inline-block;
   font-size: 2em;
   padding-right: 0.5em;
 }
-.gt-header-title > span {
+.gt-header-subtitle {
   font-size: 1em;
 }
 

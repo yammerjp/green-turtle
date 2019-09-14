@@ -1,6 +1,6 @@
 ---
 title: hoge
-date: 2019-01-01 00:11:22
+date: 2019/01/01 00:11
 tags: hoge
 ---
 
