@@ -38,8 +38,8 @@ export default {
         return undefined
       }
       return {
-        prev : (number === 0) ? undefined : this.allArticles[number-1].id,
-        next : (number === this.allArticles.length-1) ? undefined : this.allArticles[number+1].id
+        next : (number === 0) ? undefined : this.allArticles[number-1].id,
+        prev : (number === this.allArticles.length-1) ? undefined : this.allArticles[number+1].id
       }
     }
   }

@@ -7,10 +7,10 @@
         <div v-html="articleObject.html" />
       </div>
       <div class="gt-article-prev-and-next">
-        <a v-if="prevAndNextArticleId.prev" class="gt-article-prev" :href="`/article/${prevAndNextArticleId.prev}/`">&lt; 前の記事</a>
-        <span v-else class="gt-article-prev">  </span>
-        <a v-if="prevAndNextArticleId.next" class="gt-article-next" :href="`/article/${prevAndNextArticleId.next}/`">次の記事 &gt;</a>
+        <a v-if="prevAndNextArticleId.next" class="gt-article-next" :href="`/article/${prevAndNextArticleId.next}/`">&lt; 新しい記事</a>
         <span v-else class="gt-article-next">  </span>
+        <a v-if="prevAndNextArticleId.prev" class="gt-article-prev" :href="`/article/${prevAndNextArticleId.prev}/`">古い記事 &gt;</a>
+        <span v-else class="gt-article-prev">  </span>
       </div>
     </div>
   </Content>
