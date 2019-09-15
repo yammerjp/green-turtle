@@ -34,8 +34,7 @@ export default {
       if (number === undefined) {
         const e = "Error: article is not found"
         console.log(e)
-//        throw e
-        return undefined
+        throw e
       }
       return {
         next : (number === 0) ? undefined : this.allArticles[number-1].id,
@@ -57,4 +56,3 @@ body{
   background-color: #f8f8f8;
 }
 </style>
-

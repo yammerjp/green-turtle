@@ -75,4 +75,7 @@ a:hover {
   margin-bottom: 0.1em;
   text-align: center;
 }
+.gt-header-navigation-item:hover{
+  background-color: #efefef
+}
 </style>

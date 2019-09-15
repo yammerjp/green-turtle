@@ -33,3 +33,4 @@ articleIdPaths.forEach((path) => {
 })
 
 deleteFile(config.extendsNuxtConfig)
+deleteFile(`assets/allArticles.json`)
