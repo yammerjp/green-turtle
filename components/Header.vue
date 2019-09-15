@@ -11,8 +11,8 @@
   <Content :is-header-navigation="true">
     <a class="gt-header-navigation-item" href="https://blog.yammer.fun">Home</a>
     <a class="gt-header-navigation-item" href="https://blog.yammer.fun/article/aboutMe">About</a>
-    <a class="gt-header-navigation-item" href="https://twitter.com/basd4g">Twitter</a>
-    <a class="gt-header-navigation-item" href="https://github.com/basd4g">GitHub</a>
+    <a class="gt-header-navigation-item" href="https://twitter.com/basd4g" target="_blank" rel="noopener">Twitter</a>
+    <a class="gt-header-navigation-item" href="https://github.com/basd4g" target="_blank" rel="noopener">GitHub</a>
   </Content>
 </div></template>
 
