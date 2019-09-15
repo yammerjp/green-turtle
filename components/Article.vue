@@ -77,4 +77,23 @@ export default {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+
+.gt-article-body pre{
+  display: block;
+  background: #272822;
+  width: auto;
+  padding: 0.5em;
+  border-radius: .2em;
+  color: #f3f3ed;
+  margin: 0.5em;
+  overflow: scroll;
+}
+.gt-article-body code{
+  background: #f8f8f8;
+  color: #222222;
+}
+.gt-article-body pre code{
+  background: #272822;
+  color: #f3f3ed;
+}
 </style>
