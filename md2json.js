@@ -88,14 +88,7 @@ const isExistFile = (file) => {
 
 const writeAllArticles = () => {
   allArticles.sort((a, b) => {
-    const ret = -compareString(a.date, b.date)
-    console.log(`${a.date}    ${b.date}     ${ret}`)
-    return ret
-  })
-
-  // debug
-  allArticles.forEach((article, idx) => {
-    console.log(`articleData: ${idx} : ${article.date}`)
+    return -compareString(a.date, b.date)
   })
 
   const json = JSON.stringify(allArticles)

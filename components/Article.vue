@@ -40,13 +40,13 @@ export default {
   display: inline-block;
   font-size: 1em;
 }
-
 .gt-article-prev-and-next {
   display: flex;
-  margin-top: 1em;
+  margin-top: 3em;
   margin-bottom: 0.5em;
   justify-content: space-between;
 }
+
 .gt-article-body img{
   width: 90%;
   display: block;
@@ -57,6 +57,7 @@ export default {
 .gt-article-body h2{
   margin-top: 1em;
   border-bottom-style: solid;
+  border-bottom-width: 2px;
   border-left-style: solid;
   border-left-width: 0.5em;
   border-color: #b3b3b3;
