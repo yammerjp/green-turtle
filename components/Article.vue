@@ -74,12 +74,12 @@ export default {
   margin-top: 0.2em;
 }
 .gt-article-body p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin: 1em;
 }
 
 .gt-article-body pre{
   border-style: none;
   overflow: scroll;
+  margin: 1em;
 }
 </style>
