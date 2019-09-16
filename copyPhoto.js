@@ -47,11 +47,6 @@ const isExistFile = (file) => {
   }
 }
 
-const copyPrism = () => {
-  copy('assets/prism/prism.js', 'dist/prism/prism.js')
-  copy('assets/prism/prism.css', 'dist/prism/prism.css')
-}
-
 const mkdirIfDirIsNotExist = (dirName, callback) => {
   if (isExistFile(dirName)) {
     callback()
@@ -65,8 +60,10 @@ const mkdirIfDirIsNotExist = (dirName, callback) => {
   })
 }
 
-mkdirIfDirIsNotExist('dist', () => {
-  mkdirIfDirIsNotExist('dist/prism', () => {
-    copyPrism()
+mkdirIfDirIsNotExist(`${config.generateDir}`, () => {
+  const copyToDir = `${config.generateDir}/prism`
+  mkdirIfDirIsNotExist(copyToDir, () => {
+    copy('static/prism/prism.js', `${copyToDir}/prism.js`)
+    copy('static/prism/prism.css', `${copyToDir}/prism.css`)
   })
 })
