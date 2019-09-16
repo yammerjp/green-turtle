@@ -36,9 +36,37 @@ articleIdPaths.forEach((path) => {
   copyArticlePhotos(path)
 })
 
-// copy prismjs
-fs.mkdir('dist/prism', (e) => {
-  if (e) { return }
+const isExistFile = (file) => {
+  try {
+    fs.statSync(file)
+    return true
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      return false
+    }
+  }
+}
+
+const copyPrism = () => {
   copy('assets/prism/prism.js', 'dist/prism/prism.js')
   copy('assets/prism/prism.css', 'dist/prism/prism.css')
+}
+
+const mkdirIfDirIsNotExist = (dirName, callback) => {
+  if (isExistFile(dirName)) {
+    callback()
+    return
+  }
+  fs.mkdir(dirName, (e) => {
+    if (e) {
+      throw e
+    }
+    callback()
+  })
+}
+
+mkdirIfDirIsNotExist('dist', () => {
+  mkdirIfDirIsNotExist('dist/prism', () => {
+    copyPrism()
+  })
 })
