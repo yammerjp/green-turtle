@@ -47,39 +47,31 @@ export default {
   justify-content: space-between;
 }
 
-.gt-article-body img{
-  width: 90%;
-  display: block;
-  margin: auto;
+.gt-article {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+@media screen and (min-width: 600px) {
+  .gt-article {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.gt-article h1, .gt-article-body h2, .gt-article-body h3, .gt-article-body p, .gt-article-body img, .gt-article-body pre {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-.gt-article-body h2{
-  margin-top: 1em;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-left-style: solid;
-  border-left-width: 0.5em;
-  border-color: #b3b3b3;
-  padding-left: 0.5em;
-}
-.gt-article-body h3{
-  margin-top: 0.5em;
-  border-left-style: solid;
-  border-left-width: 0.5em;
-  border-color: #b3b3b3;
-  padding-left: 0.5em;
-}
-.gt-article-body h4{
-  margin-top: 0.2em;
-}
-.gt-article-body p {
-  margin: 1em;
+
+.gt-article-body img{
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
 }
 
 .gt-article-body pre{
   border-style: none;
   overflow: scroll;
-  margin: 1em;
 }
 </style>
