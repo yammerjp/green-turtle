@@ -10,7 +10,8 @@
     "md2json": "node md2json.js",
     "make": "node md2json.js && nuxt generate && node copyPhoto.js",
     "unmake": "node deleteJson.js",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "server": "http-server dist"
   },
   "dependencies": {
     "firebase-tools": "^7.3.2",
@@ -23,6 +24,7 @@
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2"
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "http-server": "^0.11.1"
   }
 }
