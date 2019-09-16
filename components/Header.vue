@@ -5,7 +5,7 @@
       Green Turtle
     </span>
     <span class="gt-header-subtitle">
-      情報系学生が技術に関することをつらつらと
+      Webが気になる情報系学生
     </span>
   </div></div>
   <Content :is-header-navigation="true">
