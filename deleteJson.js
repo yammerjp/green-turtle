@@ -29,7 +29,7 @@ if (!isExistFile(config.extendsNuxtConfig)) { return }
 const articleIdPaths = require(config.extendsNuxtConfig)
 
 articleIdPaths.forEach((path) => {
-  deleteFile(`${path}/${config.jsonFileName}`)
+  deleteFile(`assets${path}/${config.jsonFileName}`)
 })
 
 deleteFile(config.extendsNuxtConfig)
