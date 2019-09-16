@@ -35,3 +35,10 @@ const copy = (copyFrom, copyTo) => {
 articleIdPaths.forEach((path) => {
   copyArticlePhotos(path)
 })
+
+// copy prismjs
+fs.mkdir('dist/prism', (e) => {
+  if (e) { return }
+  copy('assets/prism/prism.js', 'dist/prism/prism.js')
+  copy('assets/prism/prism.css', 'dist/prism/prism.css')
+})
