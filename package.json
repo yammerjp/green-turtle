@@ -12,7 +12,8 @@
     "make:keep": "node md2json.js && nuxt generate && node copyPhoto.js",
     "unmake": "node deleteJson.js",
     "deploy": "firebase deploy",
-    "server": "http-server dist"
+    "server": "http-server dist",
+    "dev": "yarn make && yarn server"
   },
   "dependencies": {
     "firebase-tools": "^7.3.2",
