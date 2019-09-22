@@ -74,4 +74,12 @@ export default {
   border-style: none;
   overflow: scroll;
 }
+.gt-article-body hr.gt-article-annotation-horizontalrule{
+  margin-top:4em;
+  margin-bottom:2em;
+}
+.gt-article-body ul.gt-article-annotation-list{
+  list-style: none;
+  padding-left: 0;
+}
 </style>
