@@ -82,4 +82,14 @@ export default {
   list-style: none;
   padding-left: 0;
 }
+.gt-article-body *:not(pre) > code{
+  background: hsl(0, 0%, 8%);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  border-radius: .1em;
+  color: white;
+  padding-right: .1em;
+  padding-left: .1em;
+  margin-right: .1em;
+  margin-left: .1em;
+}
 </style>
