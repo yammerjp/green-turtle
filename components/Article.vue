@@ -58,8 +58,12 @@ export default {
   }
 }
 
-.gt-article h1, .gt-article-body h2, .gt-article-body h3, .gt-article-body p, .gt-article-body img, .gt-article-body pre {
+.gt-article h1, .gt-article-body h3, .gt-article-body p, .gt-article-body img, .gt-article-body pre {
   margin-top: 1em;
+  margin-bottom: 1em;
+}
+.gt-article-body h2{
+  margin-top: 3em;
   margin-bottom: 1em;
 }
 
